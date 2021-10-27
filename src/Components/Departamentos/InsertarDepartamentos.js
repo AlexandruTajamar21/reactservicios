@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react'
+import { Redirect } from 'react-router';
 import Global from '../../Global';
 
 export default class InsertarDepartamentos extends Component {
@@ -37,6 +38,9 @@ export default class InsertarDepartamentos extends Component {
     }
 
     render() {
+        if (this.state.status) {
+            return(<Redirect to="/departamentos"></Redirect>);
+        }
         return (
             <div>
                 <h1>Insertar Departamento</h1>
